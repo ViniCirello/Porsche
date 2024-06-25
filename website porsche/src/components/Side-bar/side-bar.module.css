@@ -1,0 +1,79 @@
+/* Estilos da Sidebar */
+
+@font-face {
+    font-family: 'nunito';
+    src: url('../../utils/fonts/Nunito-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'nunito', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Define a largura constante da sidebar */
+    height: 100%; /* Altura completa da tela */
+    background-color: #333;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000; /* Garante que a sidebar fique acima de outros elementos */
+    transform: translateX(-100%); /* Esconde a sidebar fora da tela inicialmente */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    padding-top: 20px; /* Espaçamento superior */
+}
+
+.sidebarOpen {
+    transform: translateX(0); /* Move a sidebar para dentro da visão */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Para ocupar a largura completa da sidebar */
+    text-align: center; /* Centraliza os itens do menu */
+}
+
+.sidebar ul li {
+    padding: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.sidebar ul li:hover {
+    background-color: #575757;
+    cursor: pointer;
+}
+
+.iconButton {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: transparent;
+    border: none;
+    color: #f1c40f;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Garante que o botão fique acima da sidebar */
+}
+
+.menuIcon {
+    width: 30px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+.closeButton {
+    background-color: transparent;
+    border: none;
+    color: #f1c40f;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Espaçamento inferior */
+    z-index: 1001; /* Garante que o botão fique acima do conteúdo da sidebar */
+}

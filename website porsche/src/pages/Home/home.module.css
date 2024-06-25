@@ -1,0 +1,140 @@
+/* Estilos existentes */
+
+@font-face {
+    font-family: '911porschav3bold';
+    src: url('../../utils/fonts/911porschav3bold.ttf');
+}
+
+@font-face {
+    font-family: 'nunito';
+    src: url('../../utils/fonts/Nunito-Regular.ttf');
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container-video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    /* Adiciona z-index para garantir que o overlay esteja acima do vídeo */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    /* Adiciona z-index para garantir que o conteúdo esteja acima do overlay */
+}
+
+.container-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: '911porschav3bold';
+    font-size: 56px;
+}
+
+.container-cb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caption {
+    font-family: 'nunito';
+    font-size: 24px;
+}
+
+.button {
+    background-color: #f1c40f00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'nunito';
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: 2px solid white;
+    transition: background-color var(--p-transition-duration, 0.25s) cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--p-transition-duration, 0.25s) cubic-bezier(0.25, 0.1, 0.25, 1), color var(--p-transition-duration, 0.25s) cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.button:hover {
+    background-color: rgba(148, 149, 152, 0.18);
+    border-color: rgb(136, 137, 140);
+    backdrop-filter: blur(32px);
+
+}
+
+.video-control {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    transition: background-color var(--p-transition-duration, 0.25s) cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--p-transition-duration, 0.25s) cubic-bezier(0.25, 0.1, 0.25, 1), color var(--p-transition-duration, 0.25s) cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.video-control:hover {
+    background-color: rgba(148, 149, 152, 0.18);
+    border-color: rgb(136, 137, 140);
+    backdrop-filter: blur(32px);
+
+}
+
+.play {
+    width: 17px;
+    height: 17px;
+}
+
+.pause {
+    width: 17px;
+    height: 17px;
+}
+
+.container-novidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+    height: 100vh;
+}
