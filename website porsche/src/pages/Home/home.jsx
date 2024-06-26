@@ -15,9 +15,9 @@ function Home() {
     // Estados e funções do Carrossel
     const [currentIndex, setCurrentIndex] = useState(0);
     const models = [
-        { title: 'Porsche 911 Turbo s', description: 'Our engineers like to talk about the most perfect sports car ever. Incredible performance, whilst being comfortable and fully suitable for everyday use. The 911 Turbo models continue this philosophy.', image: P911 },
-        { title: 'Porsche 718 Boxster', description: 'The 718 models were made for the sport of it. They are mid-engined roadsters that unite the sporting spirit of the legendary Porsche 718 with the sports car of tomorrow – and transfer it to the roads of today’s world. With one goal: to take the everyday out of every day.', image: P718 },
-        { title: 'Porsche 91 GT3 RS', description: 'Athletes know: top performance requires more than perfect conditions and luck. Relentless training to become stronger and faster. Questioning everything, especially yourself. Learning from every mistake. Because the biggest challenge is to remain unbeatable. With this attitude, Porsche keeps pushing the boundaries of what is possible. Experience the new 911 GT3 RS in top form - with increased race track performance.', image: PGT3 },
+        { title: 'Porsche 911 Turbo s', description: 'Our engineers like to talk about the most perfect sports car ever. Incredible performance, whilst being comfortable and fully suitable for everyday use.', image: P911 },
+        { title: 'Porsche 718 Boxster', description: 'The 718 models were made for the sport of it. They are mid-engined roadsters that unite the sporting spirit of the legendary Porsche 718 with the sports car of tomorrow.', image: P718 },
+        { title: 'Porsche 911 GT3 RS', description: 'Athletes know: top performance requires more than perfect conditions and luck. Relentless training to become stronger and faster.', image: PGT3 },
     ];
 
     const prevSlide = () => {

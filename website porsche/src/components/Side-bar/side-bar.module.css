@@ -17,7 +17,7 @@ body {
     left: 0;
     width: 250px; /* Define a largura constante da sidebar */
     height: 100%; /* Altura completa da tela */
-    background-color: #333;
+    background-color: rgb(0, 0, 0);
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     z-index: 1000; /* Garante que a sidebar fique acima de outros elementos */
@@ -26,6 +26,15 @@ body {
     flex-direction: column; /* Organiza os elementos verticalmente */
     align-items: center; /* Centraliza os elementos horizontalmente */
     padding-top: 20px; /* Espaçamento superior */
+}
+
+.container-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .sidebarOpen {
@@ -53,6 +62,8 @@ body {
 
 .iconButton {
     position: fixed;
+    width: 55px;
+    height: 45px;
     top: 15px;
     left: 15px;
     background-color: transparent;
@@ -62,6 +73,11 @@ body {
     cursor: pointer;
     z-index: 1001; /* Garante que o botão fique acima da sidebar */
 }
+
+.iconButton :hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 
 .menuIcon {
     width: 30px; /* Ajuste o tamanho conforme necessário */

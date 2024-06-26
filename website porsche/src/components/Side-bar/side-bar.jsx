@@ -14,7 +14,9 @@ function SidebarPage() {
                     onClick={() => setIsSidebarOpen(true)}
                     aria-expanded={isSidebarOpen}
                 >
+                    <div className={sideStyles['container-sidebar']}>
                     <img src={MenuIcon} alt="Menu" className={sideStyles.menuIcon} />
+                    </div>
                 </button>
             )}
             {/* Sidebar e botão de fechar */}
