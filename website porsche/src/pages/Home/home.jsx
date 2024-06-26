@@ -4,10 +4,33 @@ import homeVideo from '../../utils/videos/videoPorsche.mp4';
 import SideBar from '../../components/Side-bar/side-bar';
 import Play from '../../utils/img/play.png';
 import Pause from '../../utils/img/pause.png';
+import P911 from '../../utils/img/911.png';
+import P718 from '../../utils/img/718.png';
+import PGT3 from '../../utils/img/GT3-RS.png';
 
 function Home() {
     const [isVideoPaused, setIsVideoPaused] = useState(false);
     const videoRef = useRef(null);
+
+    // Estados e funções do Carrossel
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const models = [
+        { title: 'Porsche 911 Turbo s', description: 'Our engineers like to talk about the most perfect sports car ever. Incredible performance, whilst being comfortable and fully suitable for everyday use. The 911 Turbo models continue this philosophy.', image: P911 },
+        { title: 'Porsche 718 Boxster', description: 'The 718 models were made for the sport of it. They are mid-engined roadsters that unite the sporting spirit of the legendary Porsche 718 with the sports car of tomorrow – and transfer it to the roads of today’s world. With one goal: to take the everyday out of every day.', image: P718 },
+        { title: 'Porsche 91 GT3 RS', description: 'Athletes know: top performance requires more than perfect conditions and luck. Relentless training to become stronger and faster. Questioning everything, especially yourself. Learning from every mistake. Because the biggest challenge is to remain unbeatable. With this attitude, Porsche keeps pushing the boundaries of what is possible. Experience the new 911 GT3 RS in top form - with increased race track performance.', image: PGT3 },
+    ];
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? models.length - 1 : prevIndex - 1
+        );
+    };
+
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === models.length - 1 ? 0 : prevIndex + 1
+        );
+    };
 
     const toggleVideoPlay = () => {
         if (videoRef.current.paused) {
@@ -34,28 +57,30 @@ function Home() {
                     </div>
                 </div>
                 <button onClick={toggleVideoPlay} className={homeStyles['video-control']}>
-                    {isVideoPaused ? <img className={homeStyles['play']} src={Play} alt="" /> : <img className={homeStyles['pause']} src={Pause} />}
+                    {isVideoPaused ? <img className={homeStyles['play']} src={Play} alt="Play" /> : <img className={homeStyles['pause']} src={Pause} alt="Pause" />}
                 </button>
                 <SideBar />
             </div>
 
             <div className={homeStyles['container-novidades']}>
-                <span className={homeStyles['title-novidades']}>Novidades</span>
-                <div className={homeStyles['container-cards']}>
-                    <div className={homeStyles['card']}>
-                        <div className={homeStyles['card-image']}></div>
-                        <span className={homeStyles['card-title']}>Modelo 1</span>
-                        <span className={homeStyles['card-caption']}>Descrição do modelo 1</span>
+                <span className={homeStyles['title-novidades']}>Modelos</span>
+                <div className={homeStyles['carousel-wrapper']}>
+                    <div className={homeStyles['container-cards']} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                        {models.map((model, index) => (
+                            <div className={homeStyles['card']} key={index}>
+                                <div className={homeStyles['card-image']}>
+                                    <img src={model.image} alt={model.title} className={homeStyles['image']} />
+                                </div>
+                                <span className={homeStyles['card-title']}>{model.title}</span>
+                                <span className={homeStyles['card-caption']}>{model.description}</span>
+                            </div>
+                        ))}
                     </div>
-                    <div className={homeStyles['card']}>
-                        <div className={homeStyles['card-image']}></div>
-                        <span className={homeStyles['card-title']}>Modelo 2</span>
-                        <span className={homeStyles['card-caption']}>Descrição do modelo 2</span>
-                    </div>
-                    <div className={homeStyles['card']}>
-                        <div className={homeStyles['card-image']}></div>
-                        <span className={homeStyles['card-title']}>Modelo 3</span>
-                        <span className={homeStyles['card-caption']}>Descrição do modelo 3</span>
+                    <div className={homeStyles['carousel-size']}>
+                        <div className={homeStyles['carousel-controls']}>
+                            <button className={homeStyles['carousel-control']} onClick={prevSlide}>‹</button>
+                            <button className={homeStyles['carousel-control']} onClick={nextSlide}>›</button>
+                        </div>
                     </div>
                 </div>
             </div>
